@@ -17,28 +17,28 @@ import { Lion } from "../icons/lion";
 
 const tiles = [
   {
-    icon: <MIcon className="size-full" />,
+    icon: <MIcon className="text-primary size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
     color: "primary"
   },
   {
-    icon: <Lion className="size-full text-primary" />,
+    icon: <Lion className="text-primary size-full text-primary" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
     color: "primary",
   },
   {
-    icon: <MIcon className="size-full" />,
+    icon: <MIcon className="text-secondary size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
     color: "secondary"
   },
   {
-    icon: <Lion className="size-full text-primary" />,
+    icon: <Lion className="text-secondary size-full text-primary" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
@@ -115,59 +115,57 @@ export default function Integrations() {
   }, []);
 
   return (
-    <section id="cta">
-      <div className="container px-4 py-12 md:px-8">
-        <div className="flex w-full flex-col items-center justify-center">
-          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-            <Marquee
-              reverse
-              className="-delay-[200ms] [--duration:10s]"
-              repeat={5}
-            >
-              {randomTiles1.map((review, idx) => (
-                <Card key={idx} {...review} />
-              ))}
-            </Marquee>
-            <Marquee reverse className="[--duration:25s]" repeat={5}>
-              {randomTiles2.map((review, idx) => (
-                <Card key={idx} {...review} />
-              ))}
-            </Marquee>
-            <Marquee
-              reverse
-              className="-delay-[200ms] [--duration:20s]"
-              repeat={5}
-            >
-              {randomTiles1.map((review, idx) => (
-                <Card key={idx} {...review} />
-              ))}
-            </Marquee>
-            <Marquee reverse className="[--duration:30s]" repeat={5}>
-              {randomTiles2.map((review, idx) => (
-                <Card key={idx} {...review} />
-              ))}
-            </Marquee>
-            <Marquee
-              reverse
-              className="-delay-[200ms] [--duration:20s]"
-              repeat={5}
-            >
-              {randomTiles3.map((review, idx) => (
-                <Card key={idx} {...review} />
-              ))}
-            </Marquee>
-            <Marquee reverse className="[--duration:30s]" repeat={5}>
-              {randomTiles4.map((review, idx) => (
-                <Card key={idx} {...review} />
-              ))}
-            </Marquee>
-            <div className="absolute ">
-              <div className="bg-backtround dark:bg-background absolute inset-0  -z-10 rounded-full opacity-40 blur-xl" />
-            </div>
-            <div className="to-backtround dark:to-background absolute inset-x-0 bottom-0 h-full bg-gradient-to-b from-transparent to-70%" />
+    <div className="container">
+      <div className="flex w-full flex-col items-center justify-center">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <Marquee
+            reverse
+            className="-delay-[200ms] [--duration:10s]"
+            repeat={5}
+          >
+            {randomTiles1.map((review, idx) => (
+              <Card key={idx} {...review} />
+            ))}
+          </Marquee>
+          <Marquee reverse className="[--duration:25s]" repeat={5}>
+            {randomTiles2.map((review, idx) => (
+              <Card key={idx} {...review} />
+            ))}
+          </Marquee>
+          <Marquee
+            reverse
+            className="-delay-[200ms] [--duration:20s]"
+            repeat={5}
+          >
+            {randomTiles1.map((review, idx) => (
+              <Card key={idx} {...review} />
+            ))}
+          </Marquee>
+          <Marquee reverse className="[--duration:30s]" repeat={5}>
+            {randomTiles2.map((review, idx) => (
+              <Card key={idx} {...review} />
+            ))}
+          </Marquee>
+          <Marquee
+            reverse
+            className="-delay-[200ms] [--duration:20s]"
+            repeat={5}
+          >
+            {randomTiles3.map((review, idx) => (
+              <Card key={idx} {...review} />
+            ))}
+          </Marquee>
+          <Marquee reverse className="[--duration:30s]" repeat={5}>
+            {randomTiles4.map((review, idx) => (
+              <Card key={idx} {...review} />
+            ))}
+          </Marquee>
+          <div className="absolute ">
+            <div className="bg-backtround dark:bg-background absolute inset-0  -z-10 rounded.lg opacity-40 blur-xl" />
           </div>
+          <div className="to-backtround dark:to-background absolute inset-x-0 bottom-0 h-full bg-gradient-to-b from-transparent to-70%" />
         </div>
       </div>
-    </section>
+    </div>
   );
 }

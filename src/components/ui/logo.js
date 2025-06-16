@@ -1,8 +1,8 @@
 "use client";
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
-
-export function Logo({ className }) {
+import { siteConfig } from "@/siteConfig";
+export function Logo({ className, underlined = false }) {
     const transition = {
         duration: 0.5,
         ease: "easeInOut",
@@ -10,8 +10,8 @@ export function Logo({ className }) {
 
     return (
         <motion.img
-            src="/logo.svg"
-            alt="Logo"
+            src={`/logo${underlined ? "-underlined" : ""}.svg`}
+            alt={siteConfig.companyLogoAlt}
             width={150}
             className={clsx(className, "overflow-visible")}
             initial={{ scale: 1, opacity: 1 }}

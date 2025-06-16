@@ -40,7 +40,7 @@ function DesktopNav() {
 function MobileNavButton() {
   return (
     <DisclosureButton
-      className="flex size-12 items-center justify-center self-center rounded-lg data-[hover]:bg-black/5 lg:hidden"
+      className="flex size-12 items-center justify-center self-center rounded-lg data-[hover]:bg-primary/5 lg:hidden"
       aria-label="Open main menu"
     >
       <Bars2Icon className="size-6" />
@@ -82,7 +82,7 @@ function MobileNav() {
 
 export function Navbar({ banner }) {
   return (
-    <Disclosure as="header">
+    <Disclosure as="header" className="bg-base-200">
       <PlusGrid>
         <PlusGridRow className="relative flex justify-between">
           <div className="relative flex gap-6">

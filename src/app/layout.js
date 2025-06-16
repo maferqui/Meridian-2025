@@ -1,4 +1,3 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
 
@@ -11,7 +10,7 @@ const theYoungestSerif = localFont({
 
 const ttCommonsPro = localFont({
   src: "../fonts/TTCommonsPro.otf",
-  variable: "--font-primary",
+  variable: "--font-secondary",
   subsets: ["latin"],
 });
 

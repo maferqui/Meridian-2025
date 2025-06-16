@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { TextComponent } from "../eldoraui/featurefour";
 import { cn } from "@/lib/utils";
 import Section from "../ui/section";
+import Image from "next/image";
 
 const data = [
   {
@@ -10,28 +11,28 @@ const data = [
     content:
       "Aplicamos metodologías probadas por las grandes firmas internacionales, adaptadas a la realidad dinámica y cambiante de Latinoamérica.",
     srcImage:
-      "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
+      "/images/computer.png",
   },
   {
     title: "Equipo Multidisciplinario de Alto Nivel",
     content:
       "Especialistas en estrategia financiera (CFA®), transformación digital (IA, SaaS), operaciones Lean y compliance legal. Nuestra experiencia proviene de la banca de inversión, Big Four y startups de alto crecimiento.",
     srcImage:
-      "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
+      "/images/computer.png",
   },
   {
     title: "Modelo Ágil y Accesible",
     content:
       "Ofrecemos paquetes flexibles según la etapa de crecimiento de tu empresa — desde validación inicial hasta expansión internacional.",
     srcImage:
-      "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
+      "/images/computer.png",
   },
   {
     title: "Impacto Dual: Rentabilidad + Sostenibilidad",
     content:
       "Nos encaminamos a ser B Corp. El 2% de nuestros ingresos se destinan a consultoría pro-bono para emprendimientos de alto impacto social.",
     srcImage:
-      "https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png",
+      "/images/computer.png",
   },
 ];
 
@@ -87,7 +88,8 @@ export function ValueProposition() {
               )}
             >
               {data.map((item, index) => (
-                <img
+                <Image
+                  fill
                   alt={item.title}
                   className={cn(
                     "absolute h-[500px] w-full transform-gpu rounded-lg object-cover transition-all duration-300",
