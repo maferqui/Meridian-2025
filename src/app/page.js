@@ -5,15 +5,20 @@ import { Link } from "@/components/ui/link";
 import Section from "@/components/ui/section";
 import { ChooseReasons } from "@/components/custom/chooseReasons";
 import { WhoWeAre } from "@/components/custom/whoWeAre";
+import { Packages } from "@/components/custom/packages";
+import { Hero } from "@/components/custom/hero";
+import { ContactForm } from "@/components/custom/contact";
 
 export default function Home() {
   return <>
     <Navbar />
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 sm:items-start">
-        <WhoWeAre />
+    <div className="grid grid-rows-[20px_1fr_20px] items-center' min-h-screen font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center">
+        <Hero />
         <ValueProposition />
+        <Packages />
         <ChooseReasons />
+        <ContactForm />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a

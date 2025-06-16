@@ -11,44 +11,38 @@ import {
 } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Marquee } from "@/registry/default/eldoraui/marquee";
+import { Marquee } from "./marquee";
+import { MIcon } from "../icons/m";
+import { Lion } from "../icons/lion";
 
 const tiles = [
   {
-    icon: <HeartHandshake className="size-full" />,
+    icon: <MIcon className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
+    color: "primary"
   },
   {
-    icon: <Globe className="size-full" />,
+    icon: <Lion className="size-full text-primary" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-70 blur-[20px]"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
+    color: "primary",
   },
   {
-    icon: <File className="size-full" />,
+    icon: <MIcon className="size-full" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-green-500 via-teal-500 to-emerald-600 opacity-70 blur-[20px]"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
+    color: "secondary"
   },
   {
-    icon: <Shield className="size-full" />,
+    icon: <Lion className="size-full text-primary" />,
     bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600 opacity-70 blur-[20px]"></div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-lg"></div>
     ),
-  },
-  {
-    icon: <Rss className="size-full" />,
-    bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]"></div>
-    ),
-  },
-  {
-    icon: <BarChart className="size-full" />,
-    bg: (
-      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 opacity-70 blur-[20px]"></div>
-    ),
+    color: "secondary",
   },
 ];
 
@@ -93,9 +87,9 @@ function Card(card) {
       className={cn(
         "relative size-20 cursor-pointer overflow-hidden rounded-2xl border p-4",
         // light styles
-        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         // dark styles
-        "transform-gpu dark:bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "transform-gpu",
+        ["border", "text"].map(property => `${property}-${card.color}`).join(" "),
       )}
     >
       {card.icon}
@@ -105,10 +99,10 @@ function Card(card) {
 }
 
 export default function Integrations() {
-  const [randomTiles1, setRandomTiles1] = useState<typeof tiles>([]);
-  const [randomTiles2, setRandomTiles2] = useState<typeof tiles>([]);
-  const [randomTiles3, setRandomTiles3] = useState<typeof tiles>([]);
-  const [randomTiles4, setRandomTiles4] = useState<typeof tiles>([]);
+  const [randomTiles1, setRandomTiles1] = useState([]);
+  const [randomTiles2, setRandomTiles2] = useState([]);
+  const [randomTiles3, setRandomTiles3] = useState([]);
+  const [randomTiles4, setRandomTiles4] = useState([]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -122,7 +116,7 @@ export default function Integrations() {
 
   return (
     <section id="cta">
-      <div className="container mx-auto px-4 py-12 md:px-8">
+      <div className="container px-4 py-12 md:px-8">
         <div className="flex w-full flex-col items-center justify-center">
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
             <Marquee

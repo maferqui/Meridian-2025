@@ -12,6 +12,7 @@ import {
   PlusGridItem,
   PlusGridRow
 } from "./plusgrid";
+import { Logo } from "../ui/logo";
 
 const links = [
   { href: "/pricing", label: "Pricing" },
@@ -91,11 +92,8 @@ export function Navbar({ banner }) {
                   {" "}
                   {/* Flex container to align items horizontally */}
                   <div className="-mt-1">
-                    XD
+                    <Logo />
                   </div>
-                  <span className="hidden font-bold md:inline-block">
-                    Meridian
-                  </span>
                 </div>
               </Link>
             </PlusGridItem>

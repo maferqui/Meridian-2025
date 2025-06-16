@@ -145,7 +145,7 @@ export default function Features({
   return (
     <section ref={ref} id="features">
       <div className="container">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto">
           <div className="mx-auto my-12 grid h-full items-center gap-10 lg:grid-cols-2">
             <div
               className={` order-1 hidden lg:order-none lg:flex ${

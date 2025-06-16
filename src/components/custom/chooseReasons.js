@@ -41,7 +41,7 @@ export function ChooseReasons() {
     >
       <Features
         data={data}
-        image="https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png"
+        video="lion.mp4"
       />
     </Section>
   );
