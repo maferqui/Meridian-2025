@@ -36,7 +36,7 @@ export function ContactForm() {
                                             name="first-name"
                                             type="text"
                                             autoComplete="given-name"
-                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-primary outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                         />
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@ export function ContactForm() {
                                             name="last-name"
                                             type="text"
                                             autoComplete="family-name"
-                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-primary outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                         />
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@ export function ContactForm() {
                                             name="company"
                                             type="text"
                                             autoComplete="organization"
-                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-primary outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                         />
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@ export function ContactForm() {
                                             name="email"
                                             type="email"
                                             autoComplete="email"
-                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-primary outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                         />
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ export function ContactForm() {
                                                 id="phone-number"
                                                 name="phone-number"
                                                 type="text"
-                                                className="block w-full rounded-lg px-3.5 py-2 text-base outline-primary outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                                                className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                             />
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@ export function ContactForm() {
                                             id="message"
                                             name="message"
                                             rows={4}
-                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-primary outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
+                                            className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                             defaultValue={''}
                                         />
                                     </div>
