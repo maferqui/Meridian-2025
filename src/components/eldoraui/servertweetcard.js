@@ -3,8 +3,9 @@ import {
   enrichTweet,
 } from "react-tweet";
 import { getTweet, } from "react-tweet/api";
-
+import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const Twitter = ({ className, ...props }) => (
   <svg
@@ -89,8 +90,8 @@ export const TweetNotFound = ({
 export const TweetHeader = ({ tweet }) => (
   <div className="flex flex-row justify-between tracking-tight">
     <div className="flex items-center space-x-2">
-      <a href={tweet.user.url} target="_blank" rel="noreferrer">
-        <img
+      <Link href={tweet.user.url} target="_blank" rel="noreferrer">
+        <Image
           title={`Profile picture of ${tweet.user.name}`}
           alt={tweet.user.screen_name}
           height={48}
@@ -98,9 +99,9 @@ export const TweetHeader = ({ tweet }) => (
           src={tweet.user.profile_image_url_https}
           className="overflow-hidden rounded-full border border-transparent"
         />
-      </a>
+      </Link>
       <div>
-        <a
+        <Link
           href={tweet.user.url}
           target="_blank"
           rel="noreferrer"
@@ -111,23 +112,23 @@ export const TweetHeader = ({ tweet }) => (
             (tweet.user.is_blue_verified && (
               <Verified className="ml-1 inline size-4 text-blue-500" />
             ))}
-        </a>
+        </Link>
         <div className="flex items-center space-x-1">
-          <a
+          <Link
             href={tweet.user.url}
             target="_blank"
             rel="noreferrer"
             className="text-sm text-gray-500 transition-all duration-75"
           >
             @{truncate(tweet.user.screen_name, 16)}
-          </a>
+          </Link>
         </div>
       </div>
     </div>
-    <a href={tweet.url} target="_blank" rel="noreferrer">
+    <Link href={tweet.url} target="_blank" rel="noreferrer">
       <span className="sr-only">Link to tweet</span>
       <Twitter className="size-5 items-start text-[#3BA9EE] transition-all ease-in-out hover:scale-105" />
-    </a>
+    </Link>
   </div>
 );
 
@@ -140,7 +141,7 @@ export const TweetBody = ({ tweet }) => (
         case "hashtag":
         case "mention":
           return (
-            <a
+            <Link
               key={idx}
               href={entity.href}
               target="_blank"
@@ -148,7 +149,7 @@ export const TweetBody = ({ tweet }) => (
               className="text-sm font-normal text-gray-500"
             >
               <span>{entity.text}</span>
-            </a>
+            </Link>
           );
         case "text":
           return (
@@ -182,7 +183,8 @@ export const TweetMedia = ({ tweet }) => (
       <div className="relative flex transform-gpu snap-x snap-mandatory gap-4 overflow-x-auto">
         <div className="shrink-0 snap-center sm:w-2" />
         {tweet.photos.map((photo) => (
-          <img
+          <Image
+            fill
             key={photo.url}
             src={photo.url}
             title={"Photo by " + tweet.user.name}
@@ -197,7 +199,9 @@ export const TweetMedia = ({ tweet }) => (
       !tweet.photos &&
       // @ts-ignore
       tweet?.card?.binding_values?.thumbnail_image_large?.image_value.url && (
-        <img
+        <Image
+          fill
+          alt={`tweet-${tweet.user.name}`}
           // @ts-ignore
           src={tweet.card.binding_values.thumbnail_image_large.image_value.url}
           className="h-64 rounded-xl border object-cover shadow-sm"

@@ -54,7 +54,7 @@ export function CobeDraggableAuto() {
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
-  }, []);
+  }, [r]);
   return (
     <div
       style={{

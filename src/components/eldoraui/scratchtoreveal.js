@@ -26,10 +26,10 @@ const ScratchToReveal = ({
       const dpr = window.devicePixelRatio || 1
       canvas.width = width * dpr
       canvas.height = height * dpr
-      
+
       // Scale context to match device pixel ratio
       ctx.scale(dpr, dpr)
-      
+
       // Set canvas CSS size
       canvas.style.width = `${width}px`
       canvas.style.height = `${height}px`
@@ -46,7 +46,7 @@ const ScratchToReveal = ({
           const aspectRatio = img.width / img.height
           let drawWidth = width
           let drawHeight = height
-          
+
           if (aspectRatio > 1) {
             // Image is wider than tall
             drawHeight = width / aspectRatio
@@ -62,7 +62,7 @@ const ScratchToReveal = ({
           // Enable image smoothing for better quality
           ctx.imageSmoothingEnabled = true
           ctx.imageSmoothingQuality = 'high'
-          
+
           ctx.drawImage(img, x, y, drawWidth, drawHeight)
         }
         img.src = image

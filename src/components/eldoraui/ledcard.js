@@ -175,7 +175,7 @@ export default function LEDBoard({
 }) {
   const [{ rows, cols, matrix }, setBoard] = useState < Board > (createBoard(word));
 
-  useEffect(() => setBoard(createBoard(word)), [word]);
+  useEffect(() => setBoard(createBoard(word)), [word, setBoard]);
 
   const [isHovering, setIsHovering] = useState(false);
   const [, setForceUpdate] = useState(0);

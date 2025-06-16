@@ -1,5 +1,6 @@
 import { siteConfig } from "@/siteConfig";
 import { Logo } from "../ui/logo";
+import Link from "next/link";
 
 
 export function Footer({
@@ -22,7 +23,7 @@ export function Footer({
                             <ul className="text-secondary font-medium">
                                 {
                                     resources.map(resource => <li key={`footer-resource-${resource.name}`} className="mb-4">
-                                        <a href={resource?.link} className="hover:underline">{resource.name}</a>
+                                        <Link href={resource?.link} className="hover:underline">{resource.name}</Link>
                                     </li>)
                                 }
                             </ul>
@@ -35,7 +36,7 @@ export function Footer({
                             <ul className="text-secondary font-medium">
                                 {
                                     socialNetworks.map(socialNetwork => <li key={`footer-social-link-${socialNetwork.name}`} className="mb-4">
-                                        <a href={socialNetwork.link} target="_blank" className="hover:underline ">{socialNetwork.name}</a>
+                                        <Link href={socialNetwork.link} target="_blank" className="hover:underline ">{socialNetwork.name}</Link>
                                     </li>)
                                 }
                             </ul>
@@ -48,7 +49,7 @@ export function Footer({
                             <ul className="text-secondary font-medium">
                                 {
                                     contactInfo.map(info => <li key={`footer-social-link-${info.name}`} className="mb-4">
-                                        <a href={info.link} className="hover:underline ">{info.name}</a>
+                                        <Link href={info.link} className="hover:underline ">{info.name}</Link>
                                     </li>)
                                 }
                             </ul>
@@ -61,7 +62,7 @@ export function Footer({
                             <ul className="text-secondary font-medium">
                                 {
                                     legals.map(legal => <li key={`footer-legal-link-${legal.name}`} className="mb-4">
-                                        <a href={legal.link} className="hover:underline">{legal.name}</a>
+                                        <Link href={legal.link} className="hover:underline">{legal.name}</Link>
                                     </li>)
                                 }
                             </ul>
@@ -71,12 +72,12 @@ export function Footer({
             </div>
             <hr className="my-6 border-primary sm:mx-auto lg:my-8" />
             <div className="sm:flex sm:items-center sm:justify-between">
-                <span className="text-sm text-secondary sm:text-center">© {new Date().getFullYear().toString()} <a href="/" className="hover:underline">{siteConfig.companyName}</a>
+                <span className="text-sm text-secondary sm:text-center">© {new Date().getFullYear().toString()} <Link href="/" className="hover:underline">{siteConfig.companyName}</Link>
                 </span>
                 {
                     !!socialNetworks?.length && <div className="flex mt-4 sm:justify-center sm:mt-0">
                         {
-                            socialNetworks.map(socialNetwork => <a
+                            socialNetworks.map(socialNetwork => <Link
                                 key={`footer-social-icon-link-${socialNetwork.name}`}
                                 href={socialNetwork.link}
                                 className="text-secondary hover:text-primary"
@@ -84,7 +85,7 @@ export function Footer({
                             >
                                 <socialNetwork.icon className="size-5" />
                                 <span className="sr-only">{ }</span>
-                            </a>)
+                            </Link>)
                         }
                     </div>
                 }

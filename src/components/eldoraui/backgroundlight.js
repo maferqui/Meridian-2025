@@ -20,7 +20,6 @@ export const Background = ({
       >
         <div className="absolute inset-0 overflow-hidden">
           <div
-            // eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values, tailwindcss/no-contradicting-classname
             className={cn(
               `
             bg-[background-size:300%_200%]
