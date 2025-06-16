@@ -9,7 +9,8 @@ const ScratchToReveal = ({
   minScratchPercentage = 50,
   onComplete,
   children,
-  className
+  className,
+  image
 }) => {
   const canvasRef = useRef(null)
   const [isScratching, setIsScratching] = useState(false)
@@ -21,22 +22,37 @@ const ScratchToReveal = ({
     const canvas = canvasRef.current
     const ctx = canvas?.getContext("2d")
     if (canvas && ctx) {
+      // Fill with gray color first
       ctx.fillStyle = "#ccc"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
-      // Optionally add a background image or gradient
-      const gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      )
-      gradient.addColorStop(0, "#A97CF8")
-      gradient.addColorStop(0.5, "#F38CB8")
-      gradient.addColorStop(1, "#FDCC92")
-      ctx.fillStyle = gradient
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      // If image is provided, draw it
+      if (image) {
+        const img = new Image()
+        img.onload = () => {
+          // Calculate aspect ratio to maintain image proportions
+          const aspectRatio = img.width / img.height
+          let drawWidth = canvas.width
+          let drawHeight = canvas.height
+          
+          if (aspectRatio > 1) {
+            // Image is wider than tall
+            drawHeight = canvas.width / aspectRatio
+          } else {
+            // Image is taller than wide
+            drawWidth = canvas.height * aspectRatio
+          }
+
+          // Center the image
+          const x = (canvas.width - drawWidth) / 2
+          const y = (canvas.height - drawHeight) / 2
+
+          ctx.drawImage(img, x, y, drawWidth, drawHeight)
+        }
+        img.src = image
+      }
     }
-  }, [])
+  }, [image])
 
   useEffect(() => {
     const handleDocumentMouseMove = event => {
@@ -127,7 +143,6 @@ const ScratchToReveal = ({
 
   const startAnimation = () => {
     controls.start({
-      scale: [1, 1.5, 1],
       rotate: [0, 10, -10, 10, -10, 0],
       transition: { duration: 0.5 }
     })

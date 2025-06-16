@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function Section({
@@ -22,15 +23,15 @@ export default function Section({
               className="object-cover grayscale"
               priority
             />
-            <div className="absolute inset-0 bg-base-100 z-10 opacity-80 glass " />
+            <div className="absolute inset-0 bg-base-100 opacity-80 glass" />
           </div>
         )
       }
-      <div className={className}>
-        <div className="container relative mx-auto max-w-7xl px-4 pb-12">
+      <div className={cn(className, "relative z-10")}>
+        <div className="container mx-auto max-w-7xl px-4 pb-12">
           <div className="mx-auto space-y-4 pb-6 text-center">
             {title && (
-              <h2 className=" text-sm font-medium uppercase tracking-wider text-primary">
+              <h2 className="text-sm font-medium uppercase tracking-wider text-primary">
                 {title}
               </h2>
             )}
