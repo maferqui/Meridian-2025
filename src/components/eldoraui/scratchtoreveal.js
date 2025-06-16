@@ -22,9 +22,21 @@ const ScratchToReveal = ({
     const canvas = canvasRef.current
     const ctx = canvas?.getContext("2d")
     if (canvas && ctx) {
+      // Set canvas resolution to match device pixel ratio
+      const dpr = window.devicePixelRatio || 1
+      canvas.width = width * dpr
+      canvas.height = height * dpr
+      
+      // Scale context to match device pixel ratio
+      ctx.scale(dpr, dpr)
+      
+      // Set canvas CSS size
+      canvas.style.width = `${width}px`
+      canvas.style.height = `${height}px`
+
       // Fill with gray color first
       ctx.fillStyle = "#ccc"
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.fillRect(0, 0, width, height)
 
       // If image is provided, draw it
       if (image) {
@@ -32,27 +44,31 @@ const ScratchToReveal = ({
         img.onload = () => {
           // Calculate aspect ratio to maintain image proportions
           const aspectRatio = img.width / img.height
-          let drawWidth = canvas.width
-          let drawHeight = canvas.height
+          let drawWidth = width
+          let drawHeight = height
           
           if (aspectRatio > 1) {
             // Image is wider than tall
-            drawHeight = canvas.width / aspectRatio
+            drawHeight = width / aspectRatio
           } else {
             // Image is taller than wide
-            drawWidth = canvas.height * aspectRatio
+            drawWidth = height * aspectRatio
           }
 
           // Center the image
-          const x = (canvas.width - drawWidth) / 2
-          const y = (canvas.height - drawHeight) / 2
+          const x = (width - drawWidth) / 2
+          const y = (height - drawHeight) / 2
 
+          // Enable image smoothing for better quality
+          ctx.imageSmoothingEnabled = true
+          ctx.imageSmoothingQuality = 'high'
+          
           ctx.drawImage(img, x, y, drawWidth, drawHeight)
         }
         img.src = image
       }
     }
-  }, [image])
+  }, [image, width, height])
 
   useEffect(() => {
     const handleDocumentMouseMove = event => {
