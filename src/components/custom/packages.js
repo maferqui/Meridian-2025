@@ -68,12 +68,12 @@ export function Packages() {
         >
             <section>
                 <div className="container">
-                    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-4 my-12">
+                    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-4 sm:grid-cols-3 my-12 sm:justify-center">
                         {demoPrices.map((price, idx) => (
                             <div
                                 key={price.id}
                                 className={cn(
-                                    "relative flex w-full max-w-[400px] flex-col gap-8 overflow-hidden rounded-2xl border p-4 text-black dark:text-white",
+                                    "relative flex w-full max-w-[400px] flex-col gap-8 overflow-hidden rounded-2xl border p-4 text-secondary",
                                     {
                                         "border-2 border-[var(--color-one)] dark:border-[var(--color-one)]":
                                             price.isMostPopular,
@@ -113,7 +113,7 @@ export function Packages() {
                                         }}
                                         className="flex flex-row gap-1"
                                     >
-                                        <span className="text-4xl font-bold text-black dark:text-white">
+                                        <span className="text-4xl font-bold text-secondary">
                                             $
                                             {toHumanPrice(price.amount, 0)}                                    <span className="text-xs"> /{interval}</span>
                                         </span>
