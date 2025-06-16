@@ -21,14 +21,14 @@ export default function DynamicSquareBackground({
       }
     `}
       </style>
-      <div className="relative flex w-80 flex-col gap-8 overflow-hidden rounded-xl border border-neutral-400/20 px-8 py-4 shadow-sm dark:shadow-black">
+      <div className="relative flex w-80 flex-col gap-8 overflow-hidden rounded-xl border border-primary/20 px-8 py-4 shadow-sm">
         <DecorativeTilesBackground />
         <div className="z-20">
           <div className="">
             <h3 className="inline text-xl font-semibold text-neutral-900 dark:text-neutral-100">
               {title}
             </h3>
-            <p className="ml-2 inline rounded-sm border border-neutral-900 px-0.5 align-top text-xs font-medium uppercase tracking-tight dark:border-neutral-400">
+            <p className="ml-2 inline rounded-sm border border-neutral-900 px-0.5 align-top text-xs font-medium uppercase tracking-tight dark:border-primary">
               {tag}
             </p>
           </div>

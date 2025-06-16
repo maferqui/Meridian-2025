@@ -16,6 +16,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-1 flex flex-col gap-[32px] items-center">
         <Hero />
+        <WhoWeAre />
         <ValueProposition />
         <Packages />
         <ChooseReasons />

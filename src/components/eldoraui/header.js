@@ -15,9 +15,9 @@ import {
 import { Logo } from "../ui/logo";
 
 const links = [
-  { href: "/pricing", label: "Pricing" },
+  /*{ href: "/pricing", label: "Pricing" },
   { href: "/company", label: "Company" },
-  { href: "/login", label: "Login" }
+  { href: "/login", label: "Login" }*/
 ]
 
 function DesktopNav() {
@@ -104,7 +104,9 @@ export function Navbar({ banner, }) {
             )}
           </div>
           <DesktopNav />
-          <MobileNavButton />
+          {
+            !!links?.length && <MobileNavButton />
+          }
         </PlusGridRow>
       </PlusGrid>
       <MobileNav />

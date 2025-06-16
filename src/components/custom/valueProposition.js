@@ -56,6 +56,7 @@ export function ValueProposition() {
   return <Section
     subtitle="Propuesta de Valor"
     title="Nuestra"
+    id="propuesta-valor"
   >
     <section>
       <div className="container">
