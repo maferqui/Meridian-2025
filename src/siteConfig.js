@@ -1,4 +1,4 @@
-import { Instagram } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 
 export const siteConfig = {
     companyName: "Meridian - Consulting Partners",
@@ -7,7 +7,14 @@ export const siteConfig = {
         {
             name: "Instagram",
             link: "https://www.instagram.com/meridian_consulting_ec/",
-            icon: Instagram
+            icon: Instagram,
         }
-    ]
+    ],
+    contactInfo: [
+        {
+            name: "meridianconsultingec@gmail.com",
+            link: "mailto:meridianconsultingec@gmail.com",
+            icon: Mail,
+        },
+    ],
 }

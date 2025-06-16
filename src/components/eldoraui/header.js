@@ -80,7 +80,7 @@ function MobileNav() {
   )
 }
 
-export function Navbar({ banner }) {
+export function Navbar({ banner, }) {
   return (
     <Disclosure as="header" className="bg-base-200">
       <PlusGrid>

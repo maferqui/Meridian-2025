@@ -6,6 +6,7 @@ export function Footer({
     resources,
     legals,
     socialNetworks = siteConfig.socialNetworks,
+    contactInfo = siteConfig.contactInfo,
 }) {
 
     return <footer className="bg-base-200 border-t border-primary">
@@ -14,7 +15,7 @@ export function Footer({
                 <div className="mb-6 md:mb-0">
                     <Logo underlined />
                 </div>
-                <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div className="flex flex-col md:gap-16 md:flex-row">
                     {
                         !!resources?.length && <div>
                             <h2 className="mb-6 text-sm font-semibold uppercase text-primary">Recursos</h2>
@@ -25,8 +26,8 @@ export function Footer({
                                     </li>)
                                 }
                             </ul>
-                        </div>}
-
+                        </div>
+                    }
                     {
                         socialNetworks?.length &&
                         <div>
@@ -35,6 +36,19 @@ export function Footer({
                                 {
                                     socialNetworks.map(socialNetwork => <li key={`footer-social-link-${socialNetwork.name}`} className="mb-4">
                                         <a href={socialNetwork.link} target="_blank" className="hover:underline ">{socialNetwork.name}</a>
+                                    </li>)
+                                }
+                            </ul>
+                        </div>
+                    }
+                    {
+                        contactInfo?.length &&
+                        <div>
+                            <h2 className="mb-6 text-sm font-semibold uppercase text-primary">Contáctanos</h2>
+                            <ul className="text-secondary font-medium">
+                                {
+                                    contactInfo.map(info => <li key={`footer-social-link-${info.name}`} className="mb-4">
+                                        <a href={info.link} className="hover:underline ">{info.name}</a>
                                     </li>)
                                 }
                             </ul>

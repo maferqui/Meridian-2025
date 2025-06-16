@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Section({
   id,
   title,
@@ -5,10 +7,25 @@ export default function Section({
   description,
   children,
   className,
+  backgroundImage = null,
 }) {
   const sectionId = title ? title.toLowerCase().replace(/\s+/g, "-") : id;
   return (
-    <section id={id || sectionId}>
+    <section id={id || sectionId} className="relative flex justify-center w-full">
+      {
+        backgroundImage && (
+          <div className="absolute inset-0 border-b border-primary">
+            <Image
+              fill
+              src={backgroundImage.src}
+              alt={backgroundImage.alt}
+              className="object-cover grayscale"
+              priority
+            />
+            <div className="absolute inset-0 bg-base-100 z-10 opacity-80 glass " />
+          </div>
+        )
+      }
       <div className={className}>
         <div className="container relative mx-auto max-w-7xl px-4 pb-12">
           <div className="mx-auto space-y-4 pb-6 text-center">

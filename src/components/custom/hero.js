@@ -1,9 +1,16 @@
 import Integrations from "../eldoraui/integrations";
+import ScratchToReveal from "../eldoraui/scratchtoreveal";
+import { MIcon } from "../icons/m";
 import Section from "../ui/section";
 
 export function Hero() {
 
-    return <Section>
+    return <Section
+        backgroundImage={{
+            src: "/images/quito.jpg",
+            alt: "Meridian Consulting Partners - Ubicado en Quito, Ecuador",
+        }}
+    >
         <div className="container relative overflow-hidden">
             <div className="relative min-h-screen flex items-center justify-center ">
                 <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -21,15 +28,20 @@ export function Hero() {
                         </h1>
 
                         <p className="text-lg md:text-xl text-white/90">
-                            Estrategia global. Agilidad local. Propósito real.
+                            Estrategia global, Agilidad local, Propósito real
                         </p>
 
                     </div>
 
-                    <div className="relative h-64 md:h-full flex items-center justify-center">
-                        <div className="absolute w-64 h-64 md:w-80 md:h-80 border-2 border-primary rounded-lg">
-                        </div>
-                        <div className="relative w-24 h-24 bg-base-100 border-2 border-primary rounded-lg bottom-1/12 left-1/12 animate-float-delay before:content-['M'] before:absolute before:inset-0 before:flex before:items-center before:justify-center before:text-primary before:font-bold before:text-3xl"></div>
+                    <div className="relative h-64 md:h-full flex items-center justify-center md:justify-end">
+                        <ScratchToReveal
+                            width={250}
+                            height={250}
+                            minScratchPercentage={70}
+                            className="flex items-center justify-center overflow-hidden rounded-full border-4 border-primary bg-base-200"
+                        >
+                            <MIcon size={250} />
+                        </ScratchToReveal>
                     </div>
 
 
