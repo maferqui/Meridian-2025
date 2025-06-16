@@ -1,74 +1,31 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
-import { Field, Label, Switch } from '@headlessui/react'
+import { useForm } from 'react-hook-form'
 import Section from '../ui/section'
 import Integrations from '../eldoraui/integrations'
 
 export function ContactForm() {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        company: '',
-        email: '',
-        phone: '',
-        message: ''
-    })
-
-    const [errors, setErrors] = useState({})
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState(null)
 
-    const resetForm = () => {
-        setFormData({
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors }
+    } = useForm({
+        defaultValues: {
             firstName: '',
             lastName: '',
             company: '',
             email: '',
             phone: '',
             message: ''
-        })
-        setErrors({})
-        setSubmitStatus(null)
-    }
-
-    const validateForm = () => {
-        const newErrors = {}
-        
-        if (!formData.firstName.trim()) newErrors.firstName = 'El nombre es requerido'
-        if (!formData.lastName.trim()) newErrors.lastName = 'El apellido es requerido'
-        if (!formData.email.trim()) {
-            newErrors.email = 'El email es requerido'
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = 'Email inválido'
         }
-        if (!formData.message.trim()) newErrors.message = 'El mensaje es requerido'
-        
-        setErrors(newErrors)
-        return Object.keys(newErrors).length === 0
-    }
+    })
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }))
-        // Clear error when user starts typing
-        if (errors[name]) {
-            setErrors(prev => ({
-                ...prev,
-                [name]: ''
-            }))
-        }
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        
-        if (!validateForm()) return
-        
+    const onSubmit = async (data) => {
         setIsSubmitting(true)
         setSubmitStatus(null)
 
@@ -79,10 +36,10 @@ export function ContactForm() {
             
             // Simulate successful submission
             setSubmitStatus('success')
-            resetForm()
+            reset()
         } catch (error) {
             setSubmitStatus('error')
-            resetForm()
+            reset()
         } finally {
             setIsSubmitting(false)
         }
@@ -94,7 +51,7 @@ export function ContactForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     {/* Left column - Integrations */}
                     <div className="hidden md:flex items-center w-full h-full">
-                            <Integrations />
+                        <Integrations />
                     </div>
 
                     {/* Right column - Contact Form */}
@@ -103,22 +60,21 @@ export function ContactForm() {
                             <h2 className="text-sm font-medium uppercase tracking-wider outline-primary text-primary">Únete a la consultoría con Propósito</h2>
                             <h3 className="mt-4 text-3xl font-semibold sm:text-4xl text-secondary">Contáctanos</h3>
                         </div>
-                        <form onSubmit={handleSubmit} className="mt-8">
+                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
                             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                                 <div>
                                     <div className="flex items-center justify-between">
                                         <label htmlFor="firstName" className="block text-sm/6 font-semibold outline-primary">
                                             Nombre
                                         </label>
-                                        {errors.firstName && <p className="text-sm text-error">{errors.firstName}</p>}
+                                        {errors.firstName && <p className="text-sm text-error">{errors.firstName.message}</p>}
                                     </div>
                                     <div className="mt-2.5">
                                         <input
                                             id="firstName"
-                                            name="firstName"
-                                            type="text"
-                                            value={formData.firstName}
-                                            onChange={handleChange}
+                                            {...register('firstName', { 
+                                                required: 'El nombre es requerido'
+                                            })}
                                             className={`block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${errors.firstName ? 'outline-error' : ''}`}
                                         />
                                     </div>
@@ -128,15 +84,14 @@ export function ContactForm() {
                                         <label htmlFor="lastName" className="block text-sm/6 font-semibold outline-primary">
                                             Apellido
                                         </label>
-                                        {errors.lastName && <p className="text-sm text-error">{errors.lastName}</p>}
+                                        {errors.lastName && <p className="text-sm text-error">{errors.lastName.message}</p>}
                                     </div>
                                     <div className="mt-2.5">
                                         <input
                                             id="lastName"
-                                            name="lastName"
-                                            type="text"
-                                            value={formData.lastName}
-                                            onChange={handleChange}
+                                            {...register('lastName', {
+                                                required: 'El apellido es requerido'
+                                            })}
                                             className={`block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${errors.lastName ? 'outline-error' : ''}`}
                                         />
                                     </div>
@@ -148,10 +103,7 @@ export function ContactForm() {
                                     <div className="mt-2.5">
                                         <input
                                             id="company"
-                                            name="company"
-                                            type="text"
-                                            value={formData.company}
-                                            onChange={handleChange}
+                                            {...register('company')}
                                             className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                         />
                                     </div>
@@ -161,15 +113,19 @@ export function ContactForm() {
                                         <label htmlFor="email" className="block text-sm/6 font-semibold outline-primary">
                                             Email
                                         </label>
-                                        {errors.email && <p className="text-sm text-error">{errors.email}</p>}
+                                        {errors.email && <p className="text-sm text-error">{errors.email.message}</p>}
                                     </div>
                                     <div className="mt-2.5">
                                         <input
                                             id="email"
-                                            name="email"
                                             type="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
+                                            {...register('email', {
+                                                required: 'El email es requerido',
+                                                pattern: {
+                                                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                                    message: 'Email inválido'
+                                                }
+                                            })}
                                             className={`block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${errors.email ? 'outline-error' : ''}`}
                                         />
                                     </div>
@@ -181,10 +137,8 @@ export function ContactForm() {
                                     <div className="mt-2.5">
                                         <input
                                             id="phone"
-                                            name="phone"
                                             type="tel"
-                                            value={formData.phone}
-                                            onChange={handleChange}
+                                            {...register('phone')}
                                             className="block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary"
                                         />
                                     </div>
@@ -194,15 +148,15 @@ export function ContactForm() {
                                         <label htmlFor="message" className="block text-sm/6 font-semibold outline-primary">
                                             Mensaje
                                         </label>
-                                        {errors.message && <p className="text-sm text-error">{errors.message}</p>}
+                                        {errors.message && <p className="text-sm text-error">{errors.message.message}</p>}
                                     </div>
                                     <div className="mt-2.5">
                                         <textarea
                                             id="message"
-                                            name="message"
                                             rows={4}
-                                            value={formData.message}
-                                            onChange={handleChange}
+                                            {...register('message', {
+                                                required: 'El mensaje es requerido'
+                                            })}
                                             className={`block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${errors.message ? 'outline-error' : ''}`}
                                         />
                                     </div>

@@ -73,7 +73,7 @@ export function Footer({
             </div>
             <hr className="my-6 border-primary sm:mx-auto lg:my-8" />
             <div className="sm:flex sm:items-center sm:justify-between">
-                <span className="text-sm text-secondary sm:text-center">© {year} <Link href="/" className="hover:underline">{siteConfig.companyName}</Link>
+                <span className="text-sm text-secondary sm:text-center">© 2025 <Link href="/" className="hover:underline">{siteConfig.companyName}</Link>
                 </span>
                 {
                     !!socialNetworks?.length && <div className="flex mt-4 sm:justify-center sm:mt-0">
