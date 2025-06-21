@@ -146,7 +146,7 @@ export function ContactForm() {
                                 <div className="sm:col-span-2">
                                     <div className="flex items-center justify-between">
                                         <label htmlFor="message" className="block text-sm/6 font-semibold outline-primary">
-                                            Mensaje
+                                            ¿En qué necesitas ayuda?
                                         </label>
                                         {errors.message && <p className="text-sm text-error">{errors.message.message}</p>}
                                     </div>
