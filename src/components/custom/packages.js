@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { CircleCheck } from "lucide-react";
 import Section from "../ui/section";
@@ -17,7 +16,7 @@ const demoPrices = [
         name: "IGNICIÓN",
         description: "Startups",
         features: [
-            "Diagnóstico estratégico (1-semana)",
+            "Diagnóstico estratégico - 1 semana",
             "Taller de Propuesta de Valor",
             "Pitch Deck de Inversión",
             "Modelo Financiero básico para ronda Pre-Semilla/Semilla"
@@ -31,10 +30,10 @@ const demoPrices = [
         name: "TRACCIÓN",
         description: "Scale-ups",
         features: [
-            "Auditoría de Growth (canales y métricas)",
+            "Auditoría de Growth - Canales y métricas",
             'Diseño de "Growth Loops"',
             "Roadmap de Marketing Digital",
-            "Diagnóstico de Procesos Clave (OKR setting)"
+            "Diagnóstico de Procesos Clave - OKR setting"
         ],
         monthlyPrice: 2000,
         yearlyPrice: 20000,
@@ -46,7 +45,7 @@ const demoPrices = [
         description:
             "Corporativos",
         features: [
-            "Sprint de Estrategia Corporativa (4 semanas)",
+            "Sprint de Estrategia Corporativa - 4 semanas",
             "Análisis de Mercado y Competencia",
             "Business Case para Nueva Iniciativa",
             "Roadmap de Implementación Tecnológica",
@@ -85,7 +84,7 @@ export function Packages() {
                                         <h2 className="text-primary font-semibold leading-7">
                                             {price.name}
                                         </h2>
-                                        <p className="h-12 text-sm leading-5 text-secondary">
+                                        <p className="leading-5 text-secondary">
                                             {price.description}
                                         </p>
                                     </div>
@@ -126,7 +125,7 @@ export function Packages() {
                                         {price.features.map((feature, idx) => (
                                             <li
                                                 key={idx}
-                                                className="flex items-center gap-3 text-xs font-medium text-secondary"
+                                                className="flex items-center gap-3 font-medium text-secondary"
                                             >
                                                 <CircleCheck className="size-5 shrink-0 rounded-full bg-accent text-accent-content p-[2px]" />
                                                 <span className="flex">{feature}</span>
