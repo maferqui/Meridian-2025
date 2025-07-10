@@ -17,7 +17,7 @@ export function Hero() {
 
                     <div className="text-center md:text-left space-y-6 z-10">
 
-                        <h1 className="text-4xl md:text-6xl font-bold text-secondary leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-bold text-secondary leading-tight">
                             <span className="bg-clip-text ">
                                 Meridian
                             </span>

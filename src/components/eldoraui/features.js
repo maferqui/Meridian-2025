@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 const AccordionItem = forwardRef(
   ({ children, className, ...props }, forwardedRef) => (
     <Accordion.Item
+
       className={cn(
         "mt-px overflow-hidden focus-within:relative focus-within:z-10",
         className
@@ -148,9 +149,8 @@ export default function Features({
         <div className="mx-auto">
           <div className="mx-auto my-12 grid h-full items-center gap-10 lg:grid-cols-2">
             <div
-              className={` order-1 hidden lg:order-none lg:flex ${
-                ltr ? "lg:order-2 lg:justify-end" : "justify-start"
-              }`}
+              className={` order-1 hidden lg:order-none lg:flex ${ltr ? "lg:order-2 lg:justify-end" : "justify-start"
+                }`}
             >
               <Accordion.Root
                 className=""
@@ -169,16 +169,14 @@ export default function Features({
                   >
                     {linePosition === "left" || linePosition === "right" ? (
                       <div
-                        className={`absolute inset-y-0 h-full w-0.5 overflow-hidden rounded-lg bg-neutral-300/50 dark:bg-neutral-300/30 ${
-                          linePosition === "right"
+                        className={`absolute inset-y-0 h-full w-0.5 overflow-hidden rounded-lg bg-neutral-300/50 dark:bg-neutral-300/30 ${linePosition === "right"
                             ? "left-auto right-0"
                             : "left-0 right-auto"
-                        }`}
+                          }`}
                       >
                         <div
-                          className={`absolute left-0 top-0 w-full ${
-                            currentIndex === index ? "h-full" : "h-0"
-                          } origin-top bg-primary transition-all ease-linear dark:bg-white`}
+                          className={`absolute left-0 top-0 w-full ${currentIndex === index ? "h-full" : "h-0"
+                            } origin-top bg-primary transition-all ease-linear dark:bg-white`}
                           style={{
                             transitionDuration:
                               currentIndex === index
@@ -191,16 +189,13 @@ export default function Features({
 
                     {linePosition === "top" || linePosition === "bottom" ? (
                       <div
-                        className={`absolute inset-x-0 h-0.5 w-full overflow-hidden rounded-lg bg-neutral-300/50 dark:bg-neutral-300/30 ${
-                          linePosition === "bottom" ? "bottom-0" : "top-0"
-                        }`}
+                        className={`absolute inset-x-0 h-0.5 w-full overflow-hidden rounded-lg bg-neutral-300/50 dark:bg-neutral-300/30 ${linePosition === "bottom" ? "bottom-0" : "top-0"
+                          }`}
                       >
                         <div
-                          className={`absolute left-0 ${
-                            linePosition === "bottom" ? "bottom-0" : "top-0"
-                          } h-full ${
-                            currentIndex === index ? "w-full" : "w-0"
-                          } origin-left bg-primary transition-all ease-linear dark:bg-white`}
+                          className={`absolute left-0 ${linePosition === "bottom" ? "bottom-0" : "top-0"
+                            } h-full ${currentIndex === index ? "w-full" : "w-0"
+                            } origin-left bg-primary transition-all ease-linear dark:bg-white`}
                           style={{
                             transitionDuration:
                               currentIndex === index
@@ -221,9 +216,7 @@ export default function Features({
                           {item.title}
                         </AccordionTrigger>
 
-                        <AccordionTrigger className="justify-start pl-0 text-left text-[16px] leading-4">
-                          {item.content}
-                        </AccordionTrigger>
+                        {item.content}
                       </div>
                     </div>
                   </AccordionItem>
@@ -274,9 +267,8 @@ export default function Features({
                 >
                   <div className="absolute inset-y-0 left-0 right-auto h-0.5 w-full overflow-hidden rounded-lg bg-neutral-300/50 dark:bg-neutral-300/30">
                     <div
-                      className={`absolute left-0 top-0 h-full ${
-                        currentIndex === index ? "w-full" : "w-0"
-                      } origin-top bg-primary transition-all ease-linear`}
+                      className={`absolute left-0 top-0 h-full ${currentIndex === index ? "w-full" : "w-0"
+                        } origin-top bg-primary transition-all ease-linear`}
                       style={{
                         transitionDuration:
                           currentIndex === index ? `${collapseDelay}ms` : "0s"

@@ -2,6 +2,11 @@
 @tailwind utilities;
 @plugin "daisyui";
 
+/* Apply Libre Baskerville only to headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Libre Baskerville", serif !important;
+}
+
 @plugin "daisyui/theme" {
   name: "Meridian";
   default: true;

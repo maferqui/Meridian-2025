@@ -1,4 +1,6 @@
 import localFont from 'next/font/local'
+import '@fontsource/libre-baskerville/400.css'
+import '@fontsource/libre-baskerville/700.css'
 import "./globals.css";
 
 
