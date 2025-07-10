@@ -16,7 +16,7 @@ export function WhoWeAre() {
                 <Image
                     fill
                     className="rounded-lg object-cover"
-                    src="/images/building.png"
+                    src="/images/team.jpeg"
                     alt="Meridian Consulting Partners - Sobre Nosotros"
                 />
             </div>

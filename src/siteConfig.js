@@ -8,7 +8,7 @@ export const siteConfig = {
             name: "Instagram",
             link: "https://www.instagram.com/meridian_consulting_ec/",
             icon: Instagram,
-        }
+        },
     ],
     contactInfo: [
         {
@@ -17,4 +17,17 @@ export const siteConfig = {
             icon: Mail,
         },
     ],
+    pages: [
+        {
+            name: "Sobre Nosotros",
+            path: "#sobre-nosotros"
+        },
+        {
+            name: "Paquetes",
+            path: "#paquetes",
+        },
+        {
+            name: "Contáctanos",
+        }
+    ]
 }

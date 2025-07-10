@@ -15,6 +15,7 @@ import {
 import { Logo } from "../ui/logo";
 
 const links = [
+  // { href: "#propuesta-valor", label: "Propuesta de Valor" },
   /*{ href: "/pricing", label: "Pricing" },
   { href: "/company", label: "Company" },
   { href: "/login", label: "Login" }*/
@@ -92,7 +93,7 @@ export function Navbar({ banner, }) {
                   {" "}
                   {/* Flex container to align items horizontally */}
                   <div className="-mt-1">
-                    <Logo />
+                    <Logo className="ml-3" width={175} />
                   </div>
                 </div>
               </Link>

@@ -15,7 +15,7 @@ export function Footer({
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div className="md:flex md:justify-between">
                 <div className="mb-6 md:mb-0">
-                    <Logo underlined />
+                    <Logo version={2} />
                 </div>
                 <div className="flex flex-col md:gap-16 md:flex-row">
                     {

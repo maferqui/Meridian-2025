@@ -35,7 +35,7 @@ export function Hero() {
 
                     <div className="relative h-64 md:h-full flex items-center justify-center">
                         <ScratchToReveal
-                            image="/images/square-lion.jpg"
+                            image="/images/square-lion.png"
                             width={250}
                             height={250}
                             minScratchPercentage={70}

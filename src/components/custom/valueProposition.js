@@ -11,28 +11,28 @@ const data = [
     content:
       "Aplicamos metodologías probadas por las grandes firmas internacionales, adaptadas a la realidad dinámica y cambiante de Latinoamérica.",
     srcImage:
-      "/images/computer.png",
+      "/images/meeting.jpeg",
   },
   {
     title: "Equipo Multidisciplinario de Alto Nivel",
     content:
       "Especialistas en estrategia financiera (CFA®), transformación digital (IA, SaaS), operaciones Lean y compliance legal. Nuestra experiencia proviene de la banca de inversión, Big Four y startups de alto crecimiento.",
     srcImage:
-      "/images/computer.png",
+      "/images/marco_and_julio.jpeg",
   },
   {
     title: "Modelo Ágil y Accesible",
     content:
       "Ofrecemos paquetes flexibles según la etapa de crecimiento de tu empresa — desde validación inicial hasta expansión internacional.",
     srcImage:
-      "/images/computer.png",
+      "/images/meeting-2.jpeg",
   },
   {
     title: "Impacto Dual: Rentabilidad + Sostenibilidad",
     content:
       "Nos encaminamos a ser B Corp. El 2% de nuestros ingresos se destinan a consultoría pro-bono para emprendimientos de alto impacto social.",
     srcImage:
-      "/images/computer.png",
+      "/images/group.jpeg",
   },
 ];
 

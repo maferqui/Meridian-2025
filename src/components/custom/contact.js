@@ -33,7 +33,7 @@ export function ContactForm() {
             // Here you would typically send the data to your backend
             // For now, we'll simulate an API call
             await new Promise(resolve => setTimeout(resolve, 1000))
-            
+
             // Simulate successful submission
             setSubmitStatus('success')
             reset()
@@ -72,8 +72,8 @@ export function ContactForm() {
                                     <div className="mt-2.5">
                                         <input
                                             id="firstName"
-                                            {...register('firstName', { 
-                                                required: 'El nombre es requerido'
+                                            {...register('firstName', {
+                                                required: 'Campo requerido*'
                                             })}
                                             className={`block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${errors.firstName ? 'outline-error' : ''}`}
                                         />
@@ -90,7 +90,7 @@ export function ContactForm() {
                                         <input
                                             id="lastName"
                                             {...register('lastName', {
-                                                required: 'El apellido es requerido'
+                                                required: 'Campo requerido*'
                                             })}
                                             className={`block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${errors.lastName ? 'outline-error' : ''}`}
                                         />
@@ -120,7 +120,7 @@ export function ContactForm() {
                                             id="email"
                                             type="email"
                                             {...register('email', {
-                                                required: 'El email es requerido',
+                                                required: 'Campo requerido*',
                                                 pattern: {
                                                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                                                     message: 'Email inválido'
@@ -155,7 +155,7 @@ export function ContactForm() {
                                             id="message"
                                             rows={4}
                                             {...register('message', {
-                                                required: 'El mensaje es requerido'
+                                                required: 'Campo requerido*'
                                             })}
                                             className={`block w-full rounded-lg px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${errors.message ? 'outline-error' : ''}`}
                                         />
