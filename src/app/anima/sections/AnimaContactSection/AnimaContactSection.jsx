@@ -3,21 +3,12 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import AnimaIntegrations from './AnimaIntegrations'
-import { 
-  GlobeIcon, Share2Icon, UserIcon, CalendarIcon, AwardIcon, BarChart2Icon, BriefcaseIcon, CodeIcon,
-  DatabaseIcon, FileTextIcon, GitBranchIcon, GitCommitIcon, GitPullRequestIcon, HeadphonesIcon, 
-  HelpCircleIcon, HomeIcon, ImageIcon, LayersIcon, LinkIcon, LockIcon, MailCheckIcon, Maximize2Icon, 
-  MenuIcon, MicIcon, MinusIcon, MoonIcon, MoreHorizontalIcon, PackageIcon, PaperclipIcon, PauseIcon, 
-  PenToolIcon, PlayIcon, PlusIcon, RefreshCwIcon, SaveIcon, SearchIcon, SettingsIcon, ShieldIcon, 
-  SidebarIcon, SlashIcon, SlidersIcon, StarIcon, TagIcon, TargetIcon, ThumbsUpIcon, Trash2Icon, 
-  TrendingUpIcon, UploadIcon, UserPlusIcon, UsersIcon, VideoIcon, Volume2Icon, XIcon, ZapIcon, 
-  ClockIcon, MessageSquareIcon 
-} from 'lucide-react'
-import React from 'react'
+
+import ScrollAnimationWrapper from "../../../../components/custom/ScrollAnimationWrapper";
 
 export function AnimaContactSection() {
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState(null)
 
     const {
         register,
@@ -50,8 +41,8 @@ export function AnimaContactSection() {
         }
     }
 
-return (
-        <>
+    return (
+        <ScrollAnimationWrapper>
         <section className="flex flex-col items-center px-6 sm:px-8 md:px-16 py-16 sm:py-20 md:py-28 w-full bg-[#0e2828]">
             <div className="container mx-auto max-w-screen-xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center">
@@ -158,7 +149,7 @@ return (
                                     disabled={isSubmitting}
                                     className="rounded-md bg-[#d5ac57] px-3.5 py-2.5 text-center text-sm font-semibold text-[#123332] shadow-sm hover:bg-[#c09b46] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d5ac57] disabled:opacity-50"
                                 >
-                                    {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+                                    {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
                                 </button>
                             </div>
                             {submitStatus === 'success' && (
@@ -176,35 +167,6 @@ return (
                 </div>
             </div>
         </section>
-
-        {/* Icon Rows Section - 9 identical rows */}
-        <div className="w-full bg-[#0e2828] py-12 border-t border-[#ffffff1a] mt-12">
-            <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 className="text-center text-white text-xl font-medium mb-8">Nuestros Aliados</h3>
-                <div className="space-y-6">
-                    {Array(9).fill(0).map((_, rowIndex) => (
-                        <div key={rowIndex} className="flex flex-wrap justify-center items-center gap-6">
-                            {[
-                                <GlobeIcon key="globe" />,
-                                <Share2Icon key="share" />,
-                                <UserIcon key="user" />,
-                                <CalendarIcon key="calendar" />,
-                                <AwardIcon key="award" />,
-                                <BarChart2Icon key="chart" />,
-                                <BriefcaseIcon key="briefcase" />,
-                                <CodeIcon key="code" />
-                            ].map((Icon, iconIndex) => (
-                                <div 
-                                    key={`${rowIndex}-${iconIndex}`} 
-                                    className="flex items-center justify-center p-3 bg-[#1a3a3a] rounded-lg hover:bg-[#d5ac57] transition-colors duration-300"
-                                >
-                                    <Icon className="w-6 h-6 text-white" />
-                                </div>
-                            ))}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    </> 
-} 
+        </ScrollAnimationWrapper>
+    )
+}

@@ -1,4 +1,4 @@
-import { MailIcon, MapPinIcon, PhoneIcon, ClockIcon, GlobeIcon, MessageSquareIcon, Share2Icon, UserIcon, CalendarIcon, AwardIcon, BarChart2Icon, BriefcaseIcon, CodeIcon, DatabaseIcon, FileTextIcon, GitBranchIcon, GitCommitIcon, GitPullRequestIcon, HeadphonesIcon, HelpCircleIcon, HomeIcon, ImageIcon, LayersIcon, LinkIcon, LockIcon, MailCheckIcon, Maximize2Icon, MenuIcon, MicIcon, MinusIcon, MoonIcon, MoreHorizontalIcon, PackageIcon, PaperclipIcon, PauseIcon, PenToolIcon, PlayIcon, PlusIcon, RefreshCwIcon, SaveIcon, SearchIcon, SettingsIcon, ShieldIcon, SidebarIcon, SlashIcon, SlidersIcon, StarIcon, TagIcon, TargetIcon, ThumbsUpIcon, Trash2Icon, TrendingUpIcon, UploadIcon, UserPlusIcon, UsersIcon, VideoIcon, Volume2Icon, XIcon, ZapIcon } from "lucide-react";
+import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Checkbox } from "../../../../components/ui/checkbox";
@@ -23,100 +23,6 @@ export const ContactSection = () => {
       text: "123 Sample St, Sydney NSW 2000 AU",
       isLink: false,
     },
-  ];
-
-  // Icons data for horizontal rows
-  const iconRows = [
-    [
-      { icon: <GlobeIcon className="w-6 h-6 text-white" /> },
-      { icon: <Share2Icon className="w-6 h-6 text-white" /> },
-      { icon: <UserIcon className="w-6 h-6 text-white" /> },
-      { icon: <CalendarIcon className="w-6 h-6 text-white" /> },
-      { icon: <AwardIcon className="w-6 h-6 text-white" /> },
-      { icon: <BarChart2Icon className="w-6 h-6 text-white" /> },
-      { icon: <BriefcaseIcon className="w-6 h-6 text-white" /> },
-      { icon: <CodeIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <DatabaseIcon className="w-6 h-6 text-white" /> },
-      { icon: <FileTextIcon className="w-6 h-6 text-white" /> },
-      { icon: <GitBranchIcon className="w-6 h-6 text-white" /> },
-      { icon: <GitCommitIcon className="w-6 h-6 text-white" /> },
-      { icon: <GitPullRequestIcon className="w-6 h-6 text-white" /> },
-      { icon: <HeadphonesIcon className="w-6 h-6 text-white" /> },
-      { icon: <HelpCircleIcon className="w-6 h-6 text-white" /> },
-      { icon: <HomeIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <ImageIcon className="w-6 h-6 text-white" /> },
-      { icon: <LayersIcon className="w-6 h-6 text-white" /> },
-      { icon: <LinkIcon className="w-6 h-6 text-white" /> },
-      { icon: <LockIcon className="w-6 h-6 text-white" /> },
-      { icon: <MailCheckIcon className="w-6 h-6 text-white" /> },
-      { icon: <Maximize2Icon className="w-6 h-6 text-white" /> },
-      { icon: <MenuIcon className="w-6 h-6 text-white" /> },
-      { icon: <MicIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <MinusIcon className="w-6 h-6 text-white" /> },
-      { icon: <MoonIcon className="w-6 h-6 text-white" /> },
-      { icon: <MoreHorizontalIcon className="w-6 h-6 text-white" /> },
-      { icon: <PackageIcon className="w-6 h-6 text-white" /> },
-      { icon: <PaperclipIcon className="w-6 h-6 text-white" /> },
-      { icon: <PauseIcon className="w-6 h-6 text-white" /> },
-      { icon: <PenToolIcon className="w-6 h-6 text-white" /> },
-      { icon: <PlayIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <PlusIcon className="w-6 h-6 text-white" /> },
-      { icon: <RefreshCwIcon className="w-6 h-6 text-white" /> },
-      { icon: <SaveIcon className="w-6 h-6 text-white" /> },
-      { icon: <SearchIcon className="w-6 h-6 text-white" /> },
-      { icon: <SettingsIcon className="w-6 h-6 text-white" /> },
-      { icon: <ShieldIcon className="w-6 h-6 text-white" /> },
-      { icon: <SidebarIcon className="w-6 h-6 text-white" /> },
-      { icon: <SlashIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <SlidersIcon className="w-6 h-6 text-white" /> },
-      { icon: <StarIcon className="w-6 h-6 text-white" /> },
-      { icon: <TagIcon className="w-6 h-6 text-white" /> },
-      { icon: <TargetIcon className="w-6 h-6 text-white" /> },
-      { icon: <ThumbsUpIcon className="w-6 h-6 text-white" /> },
-      { icon: <Trash2Icon className="w-6 h-6 text-white" /> },
-      { icon: <TrendingUpIcon className="w-6 h-6 text-white" /> },
-      { icon: <UploadIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <UserPlusIcon className="w-6 h-6 text-white" /> },
-      { icon: <UsersIcon className="w-6 h-6 text-white" /> },
-      { icon: <VideoIcon className="w-6 h-6 text-white" /> },
-      { icon: <Volume2Icon className="w-6 h-6 text-white" /> },
-      { icon: <XIcon className="w-6 h-6 text-white" /> },
-      { icon: <ZapIcon className="w-6 h-6 text-white" /> },
-      { icon: <ClockIcon className="w-6 h-6 text-white" /> },
-      { icon: <MessageSquareIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <GlobeIcon className="w-6 h-6 text-white" /> },
-      { icon: <Share2Icon className="w-6 h-6 text-white" /> },
-      { icon: <UserIcon className="w-6 h-6 text-white" /> },
-      { icon: <CalendarIcon className="w-6 h-6 text-white" /> },
-      { icon: <AwardIcon className="w-6 h-6 text-white" /> },
-      { icon: <BarChart2Icon className="w-6 h-6 text-white" /> },
-      { icon: <BriefcaseIcon className="w-6 h-6 text-white" /> },
-      { icon: <CodeIcon className="w-6 h-6 text-white" /> },
-    ],
-    [
-      { icon: <DatabaseIcon className="w-6 h-6 text-white" /> },
-      { icon: <FileTextIcon className="w-6 h-6 text-white" /> },
-      { icon: <GitBranchIcon className="w-6 h-6 text-white" /> },
-      { icon: <GitCommitIcon className="w-6 h-6 text-white" /> },
-      { icon: <GitPullRequestIcon className="w-6 h-6 text-white" /> },
-      { icon: <HeadphonesIcon className="w-6 h-6 text-white" /> },
-      { icon: <HelpCircleIcon className="w-6 h-6 text-white" /> },
-      { icon: <HomeIcon className="w-6 h-6 text-white" /> },
-    ],
   ];
 
   return (
@@ -214,29 +120,6 @@ export const ContactSection = () => {
                 Submit
               </span>
             </Button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Horizontal Icon Rows */}
-      <div className="w-full py-12 bg-[#0e2828]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-white mb-12">Our Partners</h2>
-          <div className="space-y-8">
-            {iconRows.map((row, rowIndex) => (
-              <div key={rowIndex} className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
-                {row.map((item, iconIndex) => (
-                  <div 
-                    key={`${rowIndex}-${iconIndex}`}
-                    className="p-3 bg-white/10 rounded-lg hover:bg-[#d5ac57] transition-colors duration-300"
-                  >
-                    {React.cloneElement(item.icon, { 
-                      className: 'w-6 h-6 sm:w-8 sm:h-8 text-white' 
-                    })}
-                  </div>
-                ))}
-              </div>
-            ))}
           </div>
         </div>
       </div>
