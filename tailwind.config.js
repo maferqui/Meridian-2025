@@ -1,9 +1,24 @@
 module.exports = {
   content: [
-    "./src/**/*.{html,js,ts,jsx,tsx}",
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/anima/anima.css",
+    "./src/app/sobre-nosotros/nosotros.css",
+    "./src/app/globals.css",
+  ],
+  important: '.sobre-nosotros-root',
+  safelist: [
+    'bg-white',
+    'bg-background',
+    'bg-[#ffffff]',
+    'bg-[#0e2828]',
+    'text-foreground',
+    'border',
+    'border-border',
+    { pattern: /^bg-./ },
+    { pattern: /^text-./ },
+    { pattern: /^bg-\[#.*\]/ },
   ],
   theme: {
     extend: {

@@ -10,15 +10,20 @@ import {
 import { Menu, X } from "lucide-react";
 import { Logo } from "../../../../components/ui/logo";
 
-export const NavigationBarSection = () => {
+export const NavigationBarSection = ({ activePage = "inicio" }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleNavigation = (e, href) => {
+    e.preventDefault();
+    window.location.href = href;
+  };
 
   // Navigation menu items data
   const navItems = [
-    { label: "Inicio", href: "#" },
-    { label: "Sobre nosotros", href: "#" },
-    { label: "Servicios", href: "#" },
-    { label: "Equipo", href: "#" },
+    { label: "Inicio", href: "/inicio", key: "inicio" },
+    { label: "Sobre nosotros", href: "/sobre-nosotros", key: "sobre-nosotros" },
+    { label: "Servicios", href: "/sobre-nosotros#servicios", key: "servicios" },
+    { label: "Equipo", href: "/sobre-nosotros#equipo", key: "equipo" },
   ];
 
   const toggleMobileMenu = () => {
@@ -58,7 +63,9 @@ export const NavigationBarSection = () => {
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       href={item.href}
-                      className="font-text-regular-normal text-white" style={{ fontSize: '1rem', lineHeight: '150%' }}
+                      onClick={(e) => handleNavigation(e, item.href)}
+                      className={`font-text-regular-normal ${item.key === activePage ? 'text-[#d5ac57]' : 'text-white'}`}
+                      style={{ fontSize: '1rem', lineHeight: '150%' }}
                     >
                       {item.label}
                     </NavigationMenuLink>
@@ -69,7 +76,10 @@ export const NavigationBarSection = () => {
 
             {/* Contact Button */}
             <div className="flex items-start">
-              <Button className="px-5 py-2 bg-[#d5ac57] text-[#123332] rounded-md border border-solid hover:bg-[#c39d48]">
+              <Button 
+                className="px-5 py-2 bg-[#d5ac57] text-[#123332] rounded-md border border-solid hover:bg-[#c39d48]"
+                onClick={(e) => handleNavigation(e, '/inicio#contacto')}
+              >
                 <span className="font-text-regular-medium" style={{ fontSize: '1rem', lineHeight: '150%' }}>
                   Contacto
                 </span>
@@ -87,12 +97,25 @@ export const NavigationBarSection = () => {
               <a
                 key={index}
                 href={item.href}
-                className="font-text-regular-normal text-white py-2" style={{ fontSize: '1rem', lineHeight: '150%' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = item.href;
+                  setMobileMenuOpen(false);
+                }}
+                className="font-text-regular-normal text-white py-2 hover:text-[#d5ac57] transition-colors" 
+                style={{ fontSize: '1rem', lineHeight: '150%' }}
               >
                 {item.label}
               </a>
             ))}
-            <Button className="mt-2 w-full bg-[#d5ac57] text-[#123332] rounded-md border border-solid hover:bg-[#c39d48]">
+            <Button 
+              className="mt-2 w-full bg-[#d5ac57] text-[#123332] rounded-md border border-solid hover:bg-[#c39d48]"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/inicio#contacto';
+                setMobileMenuOpen(false);
+              }}
+            >
               <span className="font-text-regular-medium" style={{ fontSize: '1rem', lineHeight: '150%' }}>
                 Contacto
               </span>

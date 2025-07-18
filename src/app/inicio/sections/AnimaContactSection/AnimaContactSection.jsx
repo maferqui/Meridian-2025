@@ -44,7 +44,7 @@ export function AnimaContactSection() {
 
     return (
         <ScrollAnimationWrapper>
-        <section className="flex flex-col items-center px-6 sm:px-8 md:px-16 py-16 sm:py-20 md:py-28 w-full bg-[#0e2828]">
+        <section id="contacto" className="flex flex-col items-center px-6 sm:px-8 md:px-16 py-16 sm:py-20 md:py-28 w-full bg-[#0e2828]">
             <div className="container mx-auto max-w-screen-xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                     {/* Left column - Integrations */}

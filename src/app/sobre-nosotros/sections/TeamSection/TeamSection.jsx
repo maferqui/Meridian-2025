@@ -61,7 +61,7 @@ export const TeamSection = () => {
   ];
 
   return (
-    <section className="flex flex-col w-full items-center gap-10 sm:gap-16 md:gap-20 px-4 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20 lg:py-28 bg-[#0e2828]">
+    <section id="equipo" className="flex flex-col w-full items-center gap-10 sm:gap-16 md:gap-20 px-4 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20 lg:py-28 bg-[#0e2828]">
       <div className="flex flex-col max-w-screen-xl items-start gap-10 sm:gap-16 md:gap-20 w-full">
         <header className="flex flex-col max-w-screen-md items-start gap-3 sm:gap-4 w-full">
           <div className="inline-flex items-center self-stretch">
@@ -71,7 +71,7 @@ export const TeamSection = () => {
           </div>
 
           <div className="flex flex-col items-start sm:items-center gap-4 sm:gap-6 self-stretch w-full">
-            <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[length:var(--heading-h2-font-size)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] self-stretch font-heading-h2 font-[number:var(--heading-h2-font-weight)] text-white [font-style:var(--heading-h2-font-style)]">
+            <h2 className="text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3rem] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] self-stretch font-heading-h2 font-[number:var(--heading-h2-font-weight)] text-white [font-style:var(--heading-h2-font-style)]">
               Nuestro Equipo
             </h2>
 

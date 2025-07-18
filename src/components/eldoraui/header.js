@@ -15,10 +15,11 @@ import {
 import { Logo } from "../ui/logo";
 
 const links = [
-  // { href: "#propuesta-valor", label: "Propuesta de Valor" },
-  /*{ href: "/pricing", label: "Pricing" },
-  { href: "/company", label: "Company" },
-  { href: "/login", label: "Login" }*/
+  { href: "/inicio", label: "Inicio" },
+  { href: "/sobre-nosotros", label: "Sobre nosotros" },
+  { href: "/sobre-nosotros#servicios", label: "Servicios" },
+  { href: "/sobre-nosotros#equipo", label: "Equipo" },
+  { href: "/inicio#contacto", label: "Contacto" }
 ]
 
 function DesktopNav() {
@@ -28,7 +29,22 @@ function DesktopNav() {
         <PlusGridItem key={href} className="relative flex">
           <Link
             href={href}
-            className="flex items-center px-4 py-3 text-base font-medium text-secondary  bg-blend-multiply data-[hover]:text-primary"
+            className="flex items-center px-4 py-3 text-base font-medium text-secondary hover:text-primary transition-colors duration-200"
+            onClick={(e) => {
+              // Handle smooth scrolling for section links
+              if (href.includes('#')) {
+                e.preventDefault();
+                const [path, hash] = href.split('#');
+                if (window.location.pathname !== path) {
+                  window.location.href = href;
+                } else if (hash) {
+                  const element = document.getElementById(hash);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }
+            }}
           >
             {label}
           </Link>
@@ -66,7 +82,31 @@ function MobileNav() {
           >
             <Link
               href={href}
-              className="text-base font-medium text-gray-950 dark:text-white"
+              className="text-base font-medium text-gray-950 dark:text-white hover:text-primary transition-colors duration-200"
+              onClick={(e) => {
+                // Handle smooth scrolling for section links in mobile
+                if (href.includes('#')) {
+                  e.preventDefault();
+                  const [path, hash] = href.split('#');
+                  if (window.location.pathname !== path) {
+                    window.location.href = href;
+                    // Wait for page load then scroll
+                    setTimeout(() => {
+                      const element = document.getElementById(hash);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  } else if (hash) {
+                    const element = document.getElementById(hash);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }
+                // Close mobile menu after clicking a link
+                document.querySelector('[aria-label="Open main menu"]')?.click();
+              }}
             >
               {label}
             </Link>

@@ -1,7 +1,41 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const HeaderSection = () => {
+  const [fontSize, setFontSize] = useState({
+    h2: '1.75rem', // Default for mobile
+    p: '1rem'      // Default for mobile
+  });
+
+  useEffect(() => {
+    // This function runs only on the client side
+    const updateFontSizes = () => {
+      const newSizes = {
+        h2: '1.75rem', // Default for mobile
+        p: '1rem'      // Default for mobile
+      };
+
+      if (window.innerWidth >= 640) newSizes.h2 = '2.25rem'; // sm
+      if (window.innerWidth >= 768) {
+        newSizes.h2 = '2.75rem'; // md
+        newSizes.p = '1.125rem';
+      }
+      if (window.innerWidth >= 1024) newSizes.h2 = '3.25rem'; // lg
+      
+      setFontSize(newSizes);
+    };
+
+    // Set initial values
+    updateFontSizes();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', updateFontSizes);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', updateFontSizes);
+  }, []);
   // Image data for easier maintenance
   const images = [
     {
@@ -53,18 +87,43 @@ export const HeaderSection = () => {
             <div className="flex flex-col items-center gap-6 md:gap-8 text-center">
               <div className="flex flex-col items-center gap-3 md:gap-4 w-full">
                 <div className="inline-flex items-center">
-                  <span className="font-heading-tagline font-[number:var(--heading-tagline-font-weight)] text-[#d5ac57] text-[14px] md:text-[length:var(--heading-tagline-font-size)] tracking-[var(--heading-tagline-letter-spacing)] leading-[var(--heading-tagline-line-height)] [font-style:var(--heading-tagline-font-style)]">
+                  <span 
+                    className="font-semibold text-[#d5ac57] uppercase tracking-widest"
+                    style={{ 
+                      fontFamily: '"Manrope", sans-serif',
+                      fontSize: '0.875rem',
+                      lineHeight: '150%',
+                      letterSpacing: '0.05em'
+                    }}
+                  >
                     NUESTRO ENFOQUE
                   </span>
                 </div>
 
                 <div className="flex flex-col items-center gap-4 md:gap-6 w-full">
-                  <h2 className="font-heading-h2 font-[number:var(--heading-h2-font-weight)] text-white text-[28px] sm:text-[36px] md:text-[44px] lg:text-[length:var(--heading-h2-font-size)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] [font-style:var(--heading-h2-font-style)]">
+                  <h2 
+                    className="text-white font-serif"
+                    style={{
+                      fontSize: fontSize.h2,
+                      lineHeight: '120%',
+                      letterSpacing: '-0.01em',
+                      fontWeight: 400,
+                      fontFamily: '"Libre Baskerville", serif'
+                    }}
+                  >
                     Nuestra misión es Empoderar a empresas a innovar, escalar y
                     prosperar.
                   </h2>
 
-                  <p className="font-text-medium-normal font-[number:var(--text-medium-normal-font-weight)] text-white text-[16px] md:text-[length:var(--text-medium-normal-font-size)] tracking-[var(--text-medium-normal-letter-spacing)] leading-[var(--text-medium-normal-line-height)] [font-style:var(--text-medium-normal-font-style)] px-2">
+                  <p 
+                    className="text-white px-2"
+                    style={{
+                      fontFamily: '"Manrope", sans-serif',
+                      fontSize: fontSize.p,
+                      lineHeight: '150%',
+                      fontWeight: 400
+                    }}
+                  >
                     Visionamos a ser la firma de consultoría líder en LATAM por
                     su impacto transformacional
                     <br className="hidden md:block" /> y humano.
