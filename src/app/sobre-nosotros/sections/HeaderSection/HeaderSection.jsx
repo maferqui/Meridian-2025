@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
+import ScrollAnimationWrapper from "../../../../components/custom/ScrollAnimationWrapper";
 
 export const HeaderSection = () => {
   const [fontSize, setFontSize] = useState({
@@ -59,80 +60,81 @@ export const HeaderSection = () => {
     <section className="w-full py-12 sm:py-16 md:py-20 lg:py-28 px-4 md:px-8 lg:px-16 bg-[#0e2828] flex justify-center">
       <div className="max-w-screen-xl w-full flex flex-col items-center gap-10 md:gap-16 lg:gap-20">
         {/* Image container */}
-        <div className="relative w-full h-[300px] sm:h-[450px] md:h-[600px] lg:h-[750px]">
+        <ScrollAnimationWrapper delay={0.1} className="relative w-full h-[300px] sm:h-[450px] md:h-[600px] lg:h-[750px]">
           <div className="relative w-full h-full flex items-center justify-center">
-            <img
-              className={`${images[0].className} rounded-lg`}
-              alt={images[0].alt}
-              src={images[0].src}
-            />
+            <ScrollAnimationWrapper delay={0.2} className="w-full h-full flex items-center justify-center">
+              <img
+                className={`${images[0].className} rounded-lg`}
+                alt={images[0].alt}
+                src={images[0].src}
+              />
+            </ScrollAnimationWrapper>
 
-            <img
-              className={images[1].className}
-              alt={images[1].alt}
-              src={images[1].src}
-            />
+            <ScrollAnimationWrapper delay={0.4} className={images[1].className.replace('hidden', '')}>
+              <img
+                className="w-full h-full object-contain"
+                alt={images[1].alt}
+                src={images[1].src}
+              />
+            </ScrollAnimationWrapper>
 
-            <img
-              className={images[2].className}
-              alt={images[2].alt}
-              src={images[2].src}
-            />
+            <ScrollAnimationWrapper delay={0.6} className={images[2].className.replace('hidden', '')}>
+              <img
+                className="w-full h-full object-contain"
+                alt={images[2].alt}
+                src={images[2].src}
+              />
+            </ScrollAnimationWrapper>
           </div>
-        </div>
+        </ScrollAnimationWrapper>
 
         {/* Text content */}
-        <Card className="border-none bg-transparent max-w-screen-md w-full">
-          <CardContent className="p-0">
-            <div className="flex flex-col items-center gap-6 md:gap-8 text-center">
-              <div className="flex flex-col items-center gap-3 md:gap-4 w-full">
-                <div className="inline-flex items-center">
-                  <span 
-                    className="font-semibold text-[#d5ac57] uppercase tracking-widest"
-                    style={{ 
-                      fontFamily: '"Manrope", sans-serif',
-                      fontSize: '0.875rem',
-                      lineHeight: '150%',
-                      letterSpacing: '0.05em'
-                    }}
-                  >
-                    NUESTRO ENFOQUE
-                  </span>
+        <ScrollAnimationWrapper delay={0.8} className="w-full flex justify-center">
+          <Card className="border-none bg-transparent max-w-screen-md w-full">
+            <CardContent className="p-0">
+              <div className="flex flex-col items-center gap-6 md:gap-8 text-center">
+                <div className="flex flex-col items-center gap-3 md:gap-4 w-full">
+                  <div className="inline-flex items-center">
+                    <span 
+                      className="font-semibold text-[#d5ac57] uppercase tracking-widest"
+                      style={{ 
+                        fontFamily: '"Manrope", sans-serif',
+                        fontSize: '0.875rem',
+                        lineHeight: '150%',
+                        letterSpacing: '0.05em'
+                      }}
+                    >
+                      NUESTRO ENFOQUE
+                    </span>
+                  </div>
                 </div>
 
                 <div className="flex flex-col items-center gap-4 md:gap-6 w-full">
                   <h2 
-                    className="text-white font-serif"
+                    className="font-heading-h2 text-white text-center"
                     style={{
                       fontSize: fontSize.h2,
-                      lineHeight: '120%',
-                      letterSpacing: '-0.01em',
-                      fontWeight: 400,
-                      fontFamily: '"Libre Baskerville", serif'
+                      lineHeight: '110%',
+                      letterSpacing: '-0.02em'
                     }}
                   >
-                    Nuestra misión es Empoderar a empresas a innovar, escalar y
-                    prosperar.
+                    Diseñamos experiencias que inspiran y conectan
                   </h2>
-
                   <p 
-                    className="text-white px-2"
+                    className="font-text-medium-normal text-white text-center max-w-2xl"
                     style={{
-                      fontFamily: '"Manrope", sans-serif',
                       fontSize: fontSize.p,
                       lineHeight: '150%',
-                      fontWeight: 400
+                      opacity: 0.8
                     }}
                   >
-                    Visionamos a ser la firma de consultoría líder en LATAM por
-                    su impacto transformacional
-                    <br className="hidden md:block" /> y humano.
+                    En Meridian, creamos soluciones digitales que no solo se ven increíbles, sino que también generan resultados tangibles para tu negocio.
                   </p>
                 </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </ScrollAnimationWrapper>
       </div>
     </section>
   );
