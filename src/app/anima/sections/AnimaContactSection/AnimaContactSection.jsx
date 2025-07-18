@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import AnimaIntegrations from './AnimaIntegrations'
 
 import ScrollAnimationWrapper from "../../../../components/custom/ScrollAnimationWrapper";
+import { Button } from "@/components/ui/button";
 
 export function AnimaContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false)

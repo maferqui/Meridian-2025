@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import ScrollAnimationWrapper from "@/components/custom/ScrollAnimationWrapper";
 
 export const ValuePropositionSection = () => {

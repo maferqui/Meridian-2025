@@ -1,5 +1,5 @@
 import Integrations from "../eldoraui/integrations";
-import ScratchToReveal from "../eldoraui/scratchtoreveal";
+import ScratchToReveal from "../eldoraui/ScratchToReveal";
 import { MIcon } from "../icons/m";
 import Section from "../ui/section";
 

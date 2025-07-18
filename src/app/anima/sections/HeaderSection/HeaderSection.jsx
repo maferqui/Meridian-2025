@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
-import ScratchToReveal from "@/components/eldoraui/scratchtoreveal";
+import { Card, CardContent } from "@/components/ui/card";
+import ScratchToReveal from "@/components/eldoraui/ScratchToReveal";
 import { MIcon } from "@/components/icons/m";
 import ScrollAnimationWrapper from "@/components/custom/ScrollAnimationWrapper";
 

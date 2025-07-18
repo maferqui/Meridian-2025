@@ -100,6 +100,17 @@ module.exports = {
     'font-[number:var(--text-small-link-font-weight)]',
     'font-[number:var(--text-small-normal-font-weight)]',
     'font-[number:var(--text-small-semi-bold-font-weight)]',
+    // --- Safelist for bg-white and opacity variants ---
+    'bg-white',
+    'bg-white/5',
+    'bg-white/10',
+    'bg-white/20',
+    'bg-white/30',
+    'bg-white/40',
+    'bg-white/50',
+    'bg-white/70',
+    'bg-white/100',
+    // --- End safelist additions ---
     'leading-[var(--heading-h1-line-height)]',
     'leading-[var(--heading-h2-line-height)]',
     'leading-[var(--heading-h3-line-height)]',

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Button } from "../../../../components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import ScrollAnimationWrapper from "@/components/custom/ScrollAnimationWrapper";
 
 // Estilos en línea para la tipografía

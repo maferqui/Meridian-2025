@@ -1,6 +1,6 @@
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import React from "react";
-import { Button } from "../../../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Checkbox } from "../../../../components/ui/checkbox";
 import { Input } from "../../../../components/ui/input";
 import { Textarea } from "../../../../components/ui/textarea";
