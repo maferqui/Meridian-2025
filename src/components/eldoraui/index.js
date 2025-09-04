@@ -1,1 +1,1 @@
-export { default as ScratchToReveal } from './ScratchToReveal.jsx';
+export { default as ScratchToReveal } from './ScratchToReveal';
