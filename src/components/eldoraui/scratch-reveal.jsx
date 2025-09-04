@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 
-const ScratchReveal = ({ children, image, width, height, minScratchPercentage = 50, className }) => {
+const ScratchToReveal = ({ children, image, width, height, minScratchPercentage = 50, className }) => {
   const canvasRef = useRef(null);
   const [isRevealed, setIsRevealed] = useState(false);
 
@@ -92,4 +92,4 @@ const ScratchReveal = ({ children, image, width, height, minScratchPercentage = 
   );
 };
 
-export default ScratchReveal;
+export default ScratchToReveal;
